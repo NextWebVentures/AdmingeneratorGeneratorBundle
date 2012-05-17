@@ -6,7 +6,7 @@ use Pagerfanta\PagerfantaInterface;
 use Pagerfanta\View\ViewInterface;
 use Symfony\Component\Translation\TranslatorInterface;
 
-class AdmingeneratorView implements ViewInterface
+class AdmingenratorView implements ViewInterface
 {
 
     protected $translator;
