@@ -44,11 +44,11 @@ class DoctrineODMQueryFilter extends BaseQueryFilter
 
     public function addDocumentFilter($field, $value)
     {
-         $this->query->field($field.'.$id')->equals(new \MongoId($value->getId()));
+        $this->query->field($field)->references($value);
     }
 
     public function addCollectionFilter($field, $value)
     {
-         $this->query->field($field.'.$id')->equals(new \MongoId($value->getId()));
+         $this->query->field($field)->references($value);
     }
 }
