@@ -12,7 +12,10 @@ class DoctrineODMQueryFilter extends BaseQueryFilter
 
     public function addStringFilter($field, $value)
     {
-        $this->query->field($field)->equals(new \MongoRegex("/.*$value.*/i"));
+        if (!empty($value)) {
+            // hmm... looking for /.*.*/i could make some troubles... believe me!
+            $this->query->field($field)->equals(new \MongoRegex("/.*$value.*/i"));
+        }
     }
 
     public function addBooleanFilter($field, $value)
